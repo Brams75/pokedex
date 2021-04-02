@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Header from './Header';
+import Pokedex from './Pokedex';
+import './App.scss';
 
-function App() {
+const baseUrl = 'https://pokeapi.co/api/v2/pokemon?limit';
+
+const App = () => {
+  const [pokedex, setPokedex] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+
+  const getPokemons = async () => {
+    try {
+      const response = await axios.get(`${baseUrl}=25`);
+      console.log(response.data.results);
+      setPokedex(response.data.results);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getPokemons();
+  }, [inputValue]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header inputValue={inputValue} setInputValue={setInputValue} />
+      <Pokedex pokedex={pokedex} />
     </div>
   );
-}
+};
 
 export default App;
