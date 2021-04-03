@@ -1,0 +1,10 @@
+.Ask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 93.1vh;
+  &__text {
+    font-weight: bold;
+    font-size: 4rem;
+  }
+}

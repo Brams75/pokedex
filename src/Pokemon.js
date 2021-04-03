@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from '@reach/router';
 import axios from 'axios';
 
 import PokemonTags from './PokemonTags';
@@ -28,13 +29,15 @@ const Pokemon = ({ pokemon }) => {
   }, []);
 
   return (
-    <div className="Pokemon">
-      <PokemonTags pokemonTypes={pokemonTypes} />
-      <img src={pokemonImage} alt={pokemon.name} className="Pokemon__image" />
-      <span>No.{pokemonNumber}</span>
-      <h5 className="Pokemon__name">{pokemon.name}</h5>
-      <PokemonTypes pokemonTypes={pokemonTypes} />
-    </div>
+    <Link to={pokemon.name} className="Pokemon__link">
+      <div className="Pokemon">
+        <PokemonTags pokemonTypes={pokemonTypes} />
+        <img src={pokemonImage} alt={pokemon.name} className="Pokemon__image" />
+        <span>No.{pokemonNumber}</span>
+        <h5 className="Pokemon__name">{pokemon.name}</h5>
+        <PokemonTypes pokemonTypes={pokemonTypes} />
+      </div>
+    </Link>
   );
 };
 
