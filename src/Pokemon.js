@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from '@reach/router';
 import axios from 'axios';
 
-import PokemonTags from './PokemonTags';
 import PokemonTypes from './PokemonTypes';
 import './Pokemon.scss';
 
@@ -31,9 +30,8 @@ const Pokemon = ({ pokemon }) => {
   return (
     <Link to={pokemon.name} className="Pokemon__link">
       <div className="Pokemon">
-        <PokemonTags pokemonTypes={pokemonTypes} />
         <img src={pokemonImage} alt={pokemon.name} className="Pokemon__image" />
-        <span>No.{pokemonNumber}</span>
+        <span className="Pokemon__number">No.{pokemonNumber}</span>
         <h5 className="Pokemon__name">{pokemon.name}</h5>
         <PokemonTypes pokemonTypes={pokemonTypes} />
       </div>

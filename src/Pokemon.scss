@@ -1,8 +1,8 @@
 .Pokemon__link {
-  width: 20%;
+  width: 25%;
   text-decoration: none;
   color: #fff;
-  height: 31vh;
+  height: 30vh;
 }
 
 .Pokemon {
@@ -10,21 +10,25 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  max-height: 100%;
+  min-height: 100%;
 
   &:hover {
     background: #2c2f33;
   }
-
+  &__number {
+    font-family: 'Mandali', sans-serif;
+  }
   &__name {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
   }
   &__image {
     width: 12rem;
     min-height: 100%;
     background: #2c2f33;
+    image-rendering: pixelated;
   }
 }
 
@@ -33,17 +37,20 @@
 @media screen and (max-width: 1000px) {
   .Pokemon__link {
     width: 33%;
+    height: 100%;
   }
 }
 
 @media screen and (max-width: 636px) {
   .Pokemon__link {
     width: 50%;
+    height: 100%;
   }
 }
 
 @media screen and (max-width: 421px) {
   .Pokemon__link {
     width: 100%;
+    height: 100%;
   }
 }

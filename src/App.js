@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Router } from '@reach/router';
 import axios from 'axios';
 import Header from './Header';
 import Pokedex from './Pokedex';
 import Ask from './Ask';
+import PokemonDescription from './PokemonDescription';
 import './App.scss';
 
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon?limit';
@@ -57,16 +59,21 @@ const App = () => {
   return (
     <div className="App">
       <Header inputValue={inputValue} setInputValue={setInputValue} />
-      {filteredPokemons.length === 0 ? (
-        <Ask />
-      ) : (
-        <Pokedex
-          pokedex={
-            filteredPokemons.length < 200 ? filteredPokemons : firstPokemons
-          }
-          setnumberOfPokemons={setnumberOfPokemons}
-        />
-      )}
+
+      <Router>
+        {filteredPokemons.length === 0 ? (
+          <Ask path="/" />
+        ) : (
+          <Pokedex
+            pokedex={
+              filteredPokemons.length < 200 ? filteredPokemons : firstPokemons
+            }
+            setnumberOfPokemons={setnumberOfPokemons}
+            path="/"
+          />
+        )}
+        <PokemonDescription path="/:name" />
+      </Router>
     </div>
   );
 };
