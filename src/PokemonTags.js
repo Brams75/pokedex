@@ -1,4 +1,5 @@
 import React from 'react';
+import './PokemonTags.scss';
 import PropTypes from 'prop-types';
 
 const PokemonTags = ({ pokemonTypes }) => {

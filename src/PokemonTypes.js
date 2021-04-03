@@ -1,4 +1,5 @@
 import React from 'react';
+import './PokemonTypes.scss';
 import PropTypes from 'prop-types';
 
 const PokemonTypes = ({ pokemonTypes }) => {

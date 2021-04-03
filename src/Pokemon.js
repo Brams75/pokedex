@@ -24,7 +24,8 @@ const Pokemon = ({ pokemon }) => {
 
   useEffect(() => {
     getPokemon();
-  });
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className="Pokemon">
