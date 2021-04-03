@@ -1,18 +1,15 @@
 import React from 'react';
-import './Search.scss';
-import SearchIcon from '@material-ui/icons/Search';
-import Input from '@material-ui/core/Input';
 import PropTypes from 'prop-types';
-
+import './Search.scss';
+import pokeball from './images/pokeball.svg';
 const Search = ({ inputValue, setInputValue }) => {
   return (
     <div className="Search">
-      <SearchIcon style={{ color: 'white' }} fontSize="large" />
-      <Input
+      <img className="Search__pokeball" src={pokeball} alt="pokeball" />
+      <input
         className="Search__input"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        style={{ backgroundColor: 'white' }}
       />
     </div>
   );

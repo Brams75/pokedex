@@ -3,17 +3,82 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 25%;
+  position: relative;
+  margin-bottom: 2rem;
+  width: 20%;
+
   &__name {
     font-size: 1.5rem;
     font-weight: bold;
   }
-
   &__image {
-    min-width: 250px;
-    min-height: 250px;
+    height: 96px;
+    width: 96px;
     align-self: center;
-    background: #f2f2f2;
+    background: #2c2f33;
+  }
+  &__tags {
+    display: flex;
+    &__tag {
+      background-size: contain;
+      background-repeat: no-repeat;
+      min-height: 44px;
+      min-width: 44px;
+    }
+    &__tag--water {
+      background-image: url('./images/water.png');
+    }
+    &__tag--flying {
+      background-image: url('./images/flying.png');
+    }
+    &__tag--dark {
+      background-image: url('./images/dark.png');
+    }
+    &__tag--dragon {
+      background-image: url('./images/dragon.png');
+    }
+    &__tag--ghost {
+      background-image: url('./images/ghost.png');
+    }
+    &__tag--normal {
+      background-image: url('./images/normal.png');
+    }
+    &__tag--grass {
+      background-image: url('./images/grass.png');
+    }
+    &__tag--poison {
+      background-image: url('./images/poison.png');
+    }
+    &__tag--fire {
+      background-image: url('./images/fire.png');
+    }
+    &__tag--bug {
+      background-image: url('./images/bug.png');
+    }
+    &__tag--fighting {
+      background-image: url('./images/fighting.png');
+    }
+    &__tag--ground {
+      background-image: url('./images/ground.png');
+    }
+    &__tag--psychic {
+      background-image: url('./images/psychic.png');
+    }
+    &__tag--fairy {
+      background-image: url('./images/fairy.png');
+    }
+    &__tag--electric {
+      background-image: url('./images/electric.png');
+    }
+    &__tag--rock {
+      background-image: url('./images/rock.png');
+    }
+    &__tag--ice {
+      background-image: url('./images/ice.png');
+    }
+    &__tag--steel {
+      background-image: url('./images/steel.png');
+    }
   }
   &__types {
     display: flex;
@@ -115,5 +180,31 @@
       background-color: #9eb7b8;
       color: #212121;
     }
+  }
+}
+
+// Media queries
+
+@media screen and (max-width: 550px) {
+  .Pokemon {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .Pokemon {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 355px) {
+  .Pokemon {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .Pokemon {
+    width: 100%;
   }
 }

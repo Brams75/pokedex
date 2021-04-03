@@ -12,8 +12,7 @@ const App = () => {
 
   const getPokemons = async () => {
     try {
-      const response = await axios.get(`${baseUrl}=25`);
-      console.log(response.data.results);
+      const response = await axios.get(`${baseUrl}=104`);
       setPokedex(response.data.results);
     } catch (error) {
       console.error(error);
@@ -23,6 +22,10 @@ const App = () => {
   useEffect(() => {
     getPokemons();
   }, [inputValue]);
+
+  if (pokedex.length < 1) {
+    return <p>Veuillez patientez</p>;
+  }
 
   return (
     <div className="App">
