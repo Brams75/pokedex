@@ -20,13 +20,10 @@
     font-family: sans-serif;
   }
   &__image {
-    // width: 12rem;
-    // min-height: 10rem;
     width: 60%;
-    background: #ece9e6; /* fallback for old browsers */
+    background: #ece9e6;
     border-radius: 50%;
-
-    // image-rendering: pixelated;
+    border: 1px solid black;
   }
 }
 

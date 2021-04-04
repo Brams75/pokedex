@@ -102,23 +102,3 @@
     }
   }
 }
-
-// Media queries
-
-@media screen and (max-width: 1000px) {
-  .Pokemon__types {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 636px) {
-  .Pokemon__types {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 421px) {
-  .Pokemon__types {
-    display: none;
-  }
-}
