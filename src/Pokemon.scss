@@ -2,6 +2,7 @@
   width: 31%;
   text-decoration: none;
   color: #2c2f33;
+  height: 100%;
 }
 
 .Pokemon {
@@ -23,6 +24,7 @@
     // min-height: 10rem;
     width: 60%;
     background: #ece9e6; /* fallback for old browsers */
+    border-radius: 50%;
 
     // image-rendering: pixelated;
   }
