@@ -1,0 +1,25 @@
+.PokemonDescription {
+  min-height: 93.1vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 70vw;
+  margin: auto;
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  &__name {
+    margin-right: 1rem;
+  }
+
+  &__image {
+    margin: 1rem;
+    img {
+      width: 35%;
+      height: 35%;
+      margin: auto;
+      background: #ece9e6;
+    }
+  }
+}

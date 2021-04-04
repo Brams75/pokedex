@@ -1,0 +1,8 @@
+.Button {
+  margin-left: 1rem;
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 2rem;
+  }
+}

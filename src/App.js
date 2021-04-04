@@ -27,7 +27,7 @@ const App = () => {
 
   const getfirstPokemons = async () => {
     try {
-      const response = await axios.get(`${baseUrl}=15`);
+      const response = await axios.get(`${baseUrl}=12`);
       setFirstPokemons(response.data.results);
     } catch (error) {
       console.error(error);

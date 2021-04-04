@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Header.scss';
 import Search from './Search';
+import Button from './Button';
+import './Header.scss';
 
 const Header = ({ inputValue, setInputValue }) => {
   return (
     <div className="Header">
+      <Button />
       <Search inputValue={inputValue} setInputValue={setInputValue} />
     </div>
   );
