@@ -7,14 +7,12 @@ import PokemonTypes from './PokemonTypes';
 import './Pokemon.scss';
 
 const Pokemon = ({ pokemon }) => {
-  const [pokemonImage, setPokemonImage] = useState('');
   const [pokemonTypes, setPokemonTypes] = useState([]);
   const [pokemonNumber, setPokemonNumber] = useState(0);
 
   const getPokemon = async () => {
     try {
       const response = await axios.get(`${pokemon.url}`);
-      setPokemonImage(response.data.sprites.front_default);
       setPokemonTypes(response.data.types);
       setPokemonNumber(response.data.id);
     } catch (error) {
@@ -30,7 +28,11 @@ const Pokemon = ({ pokemon }) => {
   return (
     <Link to={pokemon.name} className="Pokemon__link">
       <div className="Pokemon">
-        <img src={pokemonImage} alt={pokemon.name} className="Pokemon__image" />
+        <img
+          src={`https://pokeres.bastionbot.org/images/pokemon/${pokemonNumber}.png`}
+          alt={pokemon.name}
+          className="Pokemon__image"
+        />
         <span className="Pokemon__number">No.{pokemonNumber}</span>
         <h5 className="Pokemon__name">{pokemon.name}</h5>
         <PokemonTypes pokemonTypes={pokemonTypes} />

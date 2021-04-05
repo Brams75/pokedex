@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './PokemonDescription.scss';
-import './PokemonTypes';
 import axios from 'axios';
 import PokemonTypes from './PokemonTypes';
 
@@ -33,22 +32,41 @@ const PokemonDescription = ({ name }) => {
         <span className="PokemonDescription__name">{pokemon.name}</span>
         <span className="PokemonDescription__number">No.{pokemon.id}</span>
       </div>
+
       <div className="PokemonDescription__image">
-        <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+        <img
+          src={`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`}
+          alt={pokemon.name}
+        />
+        <div class="PokemonDescription__right">
+          <div className="PokemonDescription__description">
+            <ul className="PokemonDescription__case">
+              <li className="PokemonDescription__list">
+                height :
+                <span className="PokemonDescription__list">
+                  {pokemon.height / 10} m
+                </span>
+              </li>
+              <li className="PokemonDescription__list">
+                weight :
+                <span className="PokemonDescription__list">
+                  {pokemon.weight / 10} kg
+                </span>
+              </li>
+              {pokemon.stats.map((stat) => (
+                <li key={stat.stat.name} className="PokemonDescription__list">
+                  {stat.stat.name} :
+                  <span className="PokemonDescription__list">
+                    {stat.base_stat}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <span className="type">Type :</span>
+          <PokemonTypes pokemonTypes={pokemon.types} />
+        </div>
       </div>
-      <p>height : {pokemon.height} inch</p>
-      <p>weight : {pokemon.weight} once</p>
-      <div>
-        Stats
-        <ul>
-          {pokemon.stats.map((stat) => (
-            <li key={stat.stat.name}>
-              {stat.stat.name} : {stat.base_stat}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <PokemonTypes pokemonTypes={pokemon.types} />
     </div>
   );
 };

@@ -18,11 +18,11 @@
     font-weight: bold;
     margin: 0.5rem;
     font-family: sans-serif;
+    text-transform: capitalize;
   }
   &__image {
     width: 60%;
     background: #ece9e6;
-    border-radius: 50%;
     border: 1px solid black;
   }
 }

@@ -11,24 +11,14 @@ const baseUrl = 'https://pokeapi.co/api/v2/pokemon?limit';
 
 const App = () => {
   const [pokedex, setPokedex] = useState([]);
-  const [firstPokemons, setFirstPokemons] = useState([]);
   const [filteredPokemons, setFilteredPokemons] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [numberOfPokemons, setnumberOfPokemons] = useState(28);
 
   const getAllPokemons = async () => {
     try {
-      const response = await axios.get(`${baseUrl}=2000`);
+      const response = await axios.get(`${baseUrl}=151`);
       setPokedex(response.data.results);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const getfirstPokemons = async () => {
-    try {
-      const response = await axios.get(`${baseUrl}=12`);
-      setFirstPokemons(response.data.results);
     } catch (error) {
       console.error(error);
     }
@@ -43,7 +33,6 @@ const App = () => {
 
   useEffect(() => {
     getAllPokemons();
-    getfirstPokemons();
     // eslint-disable-next-line
   }, [numberOfPokemons]);
 
@@ -65,9 +54,7 @@ const App = () => {
           <Ask path="/" />
         ) : (
           <Pokedex
-            pokedex={
-              filteredPokemons.length < 200 ? filteredPokemons : firstPokemons
-            }
+            pokedex={filteredPokemons}
             setnumberOfPokemons={setnumberOfPokemons}
             path="/"
           />
