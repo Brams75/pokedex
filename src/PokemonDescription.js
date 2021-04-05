@@ -38,7 +38,7 @@ const PokemonDescription = ({ name }) => {
           src={`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`}
           alt={pokemon.name}
         />
-        <div class="PokemonDescription__right">
+        <div className="PokemonDescription__right">
           <div className="PokemonDescription__description">
             <ul className="PokemonDescription__case">
               <li className="PokemonDescription__list">
