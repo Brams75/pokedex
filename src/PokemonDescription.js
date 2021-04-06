@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './PokemonDescription.scss';
 import axios from 'axios';
+
 import PokemonTypes from './PokemonTypes';
 import Loading from './Loading';
+import './PokemonDescription.scss';
 
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
