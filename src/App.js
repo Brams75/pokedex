@@ -17,7 +17,7 @@ const App = () => {
 
   const getAllPokemons = async () => {
     try {
-      const response = await axios.get(`${baseUrl}=151`);
+      const response = await axios.get(`${baseUrl}=591`);
       setPokedex(response.data.results);
     } catch (error) {
       console.error(error);
