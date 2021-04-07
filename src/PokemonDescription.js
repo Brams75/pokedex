@@ -31,8 +31,8 @@ const PokemonDescription = ({ name }) => {
   return (
     <div className="PokemonDescription">
       <div className="PokemonDescription__title">
-        <span className="PokemonDescription__name">{pokemon.name}</span>
-        <span className="PokemonDescription__number">No.{pokemon.id}</span>
+        <h2 className="PokemonDescription__name">{pokemon.name}</h2>
+        <h2 className="PokemonDescription__number">No.{pokemon.id}</h2>
       </div>
 
       <div className="PokemonDescription__image">
@@ -65,8 +65,10 @@ const PokemonDescription = ({ name }) => {
               ))}
             </ul>
           </div>
-          <span className="type">Type :</span>
-          <PokemonTypes pokemonTypes={pokemon.types} />
+          <div className="PokemonDescription__types">
+            <span className="type">Type :</span>
+            <PokemonTypes pokemonTypes={pokemon.types} />
+          </div>
         </div>
       </div>
     </div>
