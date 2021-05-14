@@ -8,12 +8,12 @@ import './PokemonDescription.scss';
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
 const PokemonDescription = ({ name }) => {
+  const abortController = new AbortController();
   const [pokemon, setPokemon] = useState({});
   const getPokemon = async () => {
     try {
       const response = await axios.get(`${baseUrl}${name}`);
       setPokemon(response.data);
-      console.log(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -21,6 +21,9 @@ const PokemonDescription = ({ name }) => {
 
   useEffect(() => {
     getPokemon();
+    return function cleanup() {
+      abortController.abort();
+    };
     // eslint-disable-next-line
   }, []);
 

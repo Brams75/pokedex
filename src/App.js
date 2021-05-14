@@ -48,7 +48,6 @@ const App = () => {
   return (
     <div className="App">
       <Header inputValue={inputValue} setInputValue={setInputValue} />
-
       <Router>
         {filteredPokemons.length === 0 ? (
           <Ask path="/" />

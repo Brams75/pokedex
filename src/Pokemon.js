@@ -7,8 +7,9 @@ import PokemonTypes from './PokemonTypes';
 import './Pokemon.scss';
 
 const Pokemon = ({ pokemon }) => {
+  const abortController = new AbortController();
   const [pokemonTypes, setPokemonTypes] = useState([]);
-  const [pokemonNumber, setPokemonNumber] = useState(0);
+  const [pokemonNumber, setPokemonNumber] = useState(1);
 
   const getPokemon = async () => {
     try {
@@ -22,6 +23,9 @@ const Pokemon = ({ pokemon }) => {
 
   useEffect(() => {
     getPokemon();
+    return function cleanup() {
+      abortController.abort();
+    };
     // eslint-disable-next-line
   }, []);
 
