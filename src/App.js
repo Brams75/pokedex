@@ -24,9 +24,12 @@ const App = () => {
     }
   };
 
-  const getPokemonsByName = async () => {
+  const getPokemonsByName = () => {
     const results = pokedex.filter(
-      (pokemon) => pokemon.name.includes(inputValue) && inputValue.length > 0
+      (pokemon) =>
+        pokemon.name.toUpperCase() &&
+        inputValue.toUpperCase() &&
+        inputValue.length > 0
     );
     setFilteredPokemons(results);
   };
