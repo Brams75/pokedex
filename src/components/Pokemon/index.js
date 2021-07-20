@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { Link } from '@reach/router';
 import axios from 'axios';
 
-import PokemonTypes from './PokemonTypes';
+import PokemonTypes from '../PokemonTypes';
 import './Pokemon.scss';
 
 const Pokemon = ({ pokemon }) => {
-  const abortController = new AbortController();
   const [pokemonTypes, setPokemonTypes] = useState([]);
   const [pokemonNumber, setPokemonNumber] = useState(1);
 
@@ -23,9 +22,6 @@ const Pokemon = ({ pokemon }) => {
 
   useEffect(() => {
     getPokemon();
-    return function cleanup() {
-      abortController.abort();
-    };
     // eslint-disable-next-line
   }, []);
 

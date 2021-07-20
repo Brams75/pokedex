@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./Search.scss";
-import pokeball from "./images/pokeball.svg";
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Search.scss';
+import pokeball from '../../images/pokeball.svg';
 
 const Search = ({ inputValue, setInputValue }) => (
   <div className="Search">

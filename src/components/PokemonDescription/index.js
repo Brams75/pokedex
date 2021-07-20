@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import PokemonTypes from './PokemonTypes';
-import Loading from './Loading';
+import PokemonTypes from '../PokemonTypes';
+import Loading from '../Loading';
 import './PokemonDescription.scss';
 
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
 const PokemonDescription = ({ name }) => {
-  const abortController = new AbortController();
   const [pokemon, setPokemon] = useState({});
   const getPokemon = async () => {
     try {
@@ -21,9 +20,6 @@ const PokemonDescription = ({ name }) => {
 
   useEffect(() => {
     getPokemon();
-    return function cleanup() {
-      abortController.abort();
-    };
     // eslint-disable-next-line
   }, []);
 

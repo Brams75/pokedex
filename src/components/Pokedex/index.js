@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Pokemon from './Pokemon';
+import Pokemon from '../Pokemon';
 import './Pokedex.scss';
 
 const Pokedex = ({ pokedex }) => (

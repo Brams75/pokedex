@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Router } from '@reach/router';
 import axios from 'axios';
-import Header from './Header';
-import Pokedex from './Pokedex';
-import Ask from './Ask';
-import PokemonDescription from './PokemonDescription';
+import Header from '../Header';
+import Pokedex from '../Pokedex';
+import Ask from '../Ask';
+import PokemonDescription from '../PokemonDescription';
 import './App.scss';
 
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon?limit';
@@ -13,7 +13,7 @@ const App = () => {
   const [pokedex, setPokedex] = useState([]);
   const [filteredPokemons, setFilteredPokemons] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [numberOfPokemons, setnumberOfPokemons] = useState(28);
+  const [numberOfPokemons, setnumberOfPokemons] = useState(0);
 
   const getAllPokemons = async () => {
     try {
@@ -25,12 +25,13 @@ const App = () => {
   };
 
   const getPokemonsByName = () => {
-    const results = pokedex.filter(
-      (pokemon) =>
-        pokemon.name.toUpperCase() &&
-        inputValue.toUpperCase() &&
-        inputValue.length > 0
-    );
+    const results = pokedex.filter((pokemon) => {
+      const pokemonName = pokemon.name
+        .toUpperCase()
+        .substring(0, inputValue.length);
+
+      return pokemonName === inputValue.toUpperCase();
+    });
     setFilteredPokemons(results);
   };
 

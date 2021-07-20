@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Search from './Search';
-import Button from './Button';
+import Search from '../Search';
+import Button from '../Button/Button';
 import './Header.scss';
 
 const Header = ({ inputValue, setInputValue }) => (
