@@ -30,10 +30,9 @@ const Pokemon = ({ pokemon }) => {
       <div className="Pokemon">
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonNumber}.png`}
-          // 
-          // https:alt={ //pokeres.bastionbot.org/images/pokemon/${pokemonNumber}.png
-            pokemon.name
-          }
+          //
+
+          alt={pokemon.name}
           className="Pokemon__image"
         />
         <span className="Pokemon__number">No.{pokemonNumber}</span>

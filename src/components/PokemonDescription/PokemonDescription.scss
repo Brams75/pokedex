@@ -32,17 +32,16 @@
     align-items: center;
 
     img {
-      max-width: 50%;
-      min-height: 100%;
-      margin: 2rem;
+      max-width: 350px;
+      min-height: 350px;
       background: #ece9e6;
       object-fit: cover;
+      align-self: flex-start;
     }
   }
 
   &__description {
     background-color: #30a7d7;
-    border-radius: 2rem;
   }
   &__type {
     display: flex;
@@ -85,9 +84,11 @@
   }
 
   .PokemonDescription__image {
+    align-self: center;
     img {
-      min-width: 100%;
-      min-height: 100%;
+      max-width: 100%;
+      min-height: 350px;
+      margin-bottom: 1rem;
     }
   }
 

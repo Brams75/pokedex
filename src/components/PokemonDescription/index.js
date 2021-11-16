@@ -36,7 +36,7 @@ const PokemonDescription = ({ name }) => {
 
       <div className="PokemonDescription__image">
         <img
-          src={`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`}
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
           alt={pokemon.name}
         />
         <div className="PokemonDescription__right">
